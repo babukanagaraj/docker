@@ -1,0 +1,14 @@
+FROM ericsson:babu-1.0
+WORKDIR /root
+
+RUN mkdir tomcat-installation
+WORKDIR tomcat-installation
+
+RUN wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.51/bin/apache-tomcat-8.5.51.tar.gz
+RUN tar -xvf apache-tomcat-8.5.51.tar.gz
+WORKDIR apache-tomcat-8.5.51
+
+COPY start-tomcat.sh /root/tomcat-installation
+WORKDIR /root/tomcat-installation
+
+CMD ["sh","start-tomcat.sh"]

@@ -1,0 +1,8 @@
+FROM ericsson:babu-1.3
+
+RUN mkdir workspace
+WORKDIR workspace
+
+COPY build-package.sh .
+ENV REPONAME maven-sample-project
+CMD ["sh","build-package.sh"]

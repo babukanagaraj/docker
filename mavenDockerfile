@@ -1,0 +1,3 @@
+FROM ericsson:babu-1.2
+
+RUN yum install -y maven
